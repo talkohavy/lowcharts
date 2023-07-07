@@ -1,5 +1,4 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
 import LineChart from '../../../highcharts/LineChart';
 import BaseWidget from '../BaseWidget';
 
@@ -17,8 +16,7 @@ export default function LineChartWidget({ widgetProps }) {
     tooltipValueSuffix,
   } = widgetProps;
 
-  // @ts-ignore
-  const isDarkMode = useSelector((state) => state.theme.isDarkMode);
+  const isDarkMode = false;
 
   return (
     <BaseWidget className='bg-white hover:bg-slate-100 cursor-move'>

@@ -1,5 +1,4 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
 import BarChart from '../../../highcharts/BarChart';
 import BaseWidget from '../BaseWidget';
 
@@ -16,8 +15,7 @@ export default function BarChartWidget({ widgetProps }) {
     tooltipValueSuffix,
   } = widgetProps;
 
-  // @ts-ignore
-  const isDarkMode = useSelector((state) => state.theme.isDarkMode);
+  const isDarkMode = false;
 
   return (
     <BaseWidget className='bg-white hover:bg-slate-100 cursor-move'>
