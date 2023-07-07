@@ -25,14 +25,13 @@ export default function XBarControlChart({
         tooltipValueSuffix={tooltipValueSuffix}
         isDarkMode={isDarkMode}
         addHorizontalLines={[
-          { value: CL, color: 'blue', zIndex: 4, width: 6 }, // zIndex 4+ is above dots, 3- is below dots
+          { value: CL, color: 'blue', zIndex: 4, width: 6 },
           { value: UCL, color: 'red' },
           { value: LCL, color: 'red' },
         ]}
         isLoading={isSeriesLoading}
         series={series}
         lineWidth={1}
-        // areTicksRotated={true}
         setMinY={Math.ceil(LCL) - 2}
         customChartHandleRowRenderer={({ chart }) => <CustomChartHandleRow chart={chart} />}
       />

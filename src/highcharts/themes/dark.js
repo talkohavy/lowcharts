@@ -41,11 +41,6 @@ const dark = {
     tickColor: '#707073',
     title: { style: { color: '#A0A0A3' } },
   },
-  // Even when enabled, my tooltip wins! So in order to see how this tooltip affects, you'll need to disable your own tooltip design.
-  // tooltip: {
-  //   backgroundColor: 'rgba(0, 0, 0, 0.85)',
-  //   style: { color: '#F0F0F0' },
-  // },
   plotOptions: {
     series: { dataLabels: { color: '#F0F0F3' }, marker: { lineColor: '#333' } },
     boxplot: { fillColor: '#505053' },

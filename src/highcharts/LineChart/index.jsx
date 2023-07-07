@@ -124,9 +124,9 @@ export default function LineChart({
       <HighchartsReact
         highcharts={Highcharts}
         options={optionsWithSeries}
-        constructorType='chart' // String for constructor method. Official constructors: 'chart' for Highcharts charts, 'stockChart' for Highstock charts, 'mapChart' for Highmaps charts, 'ganttChart' for Gantt charts.
-        allowChartUpdate={true} // This wrapper uses chart.update() method to apply new options to the chart when changing the parent component. This option allow to turn off the updating.
-        immutable={false} // while `true` might seem like the way to go, it causes the grapth to re-animate every time the parent re-renders, even when none of the graph's options were changed.
+        constructorType='chart'
+        allowChartUpdate={true}
+        immutable={false}
         ref={chartRef}
         containerProps={{ style: { width: '100%', height: '100%' } }}
       />

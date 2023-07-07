@@ -8,7 +8,7 @@ import { getOptions } from './getBarChartsOptions';
 
 drilldownModule(Highcharts);
 
-/** @param { import('../types/index').BarChartProps } props The props that make up the BarChart */
+/** @param { import('../types/index').BarChartProps } props  */
 export default function BarChart({
   title = '',
   titleStyle,
@@ -138,8 +138,8 @@ export default function BarChart({
       <HighchartsReact
         highcharts={Highcharts}
         options={optionsWithSeries}
-        constructorType='chart' // String for constructor method. Official constructors: 'chart' for Highcharts charts, 'stockChart' for Highstock charts, 'mapChart' for Highmaps charts, 'ganttChart' for Gantt charts.
-        allowChartUpdate={true} // This wrapper uses chart.update() method to apply new options to the chart when changing the parent component. This option allow to turn off the updating.
+        constructorType='chart'
+        allowChartUpdate={true}
         immutable={false}
         ref={chartRef}
         containerProps={{ style: { width: '100%', height: '100%' } }}
