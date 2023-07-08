@@ -1,7 +1,7 @@
-import React, { useEffect, useMemo, useRef } from 'react';
 import Highcharts from 'highcharts';
 import HighchartsReact from 'highcharts-react-official';
 import drilldownModule from 'highcharts/modules/drilldown';
+import React, { useEffect, useMemo, useRef } from 'react';
 import { deepMerge, getArrMaxValue, wrapInDebounce } from '../../utils';
 import { HIGHCHARTS_THEMES } from '../themes';
 import { getOptions } from './getBarChartsOptions';
@@ -49,16 +49,19 @@ export default function BarChart({
       observer.observe(chartRef.current.container.current);
       return () => observer.disconnect();
     }
-  }, [chartRef.current]);
+  }, []);
 
   // all useMemos:
   const categoriesConverted = useMemo(() => {
     if (categories && !hideCategories) return categories;
 
-    const maxLength = getArrMaxValue({ arr: series, predicate: (item) => item.data.length });
+    const maxLength = getArrMaxValue({
+      arr: series,
+      predicate: (item) => item.data.length,
+    });
 
     return Array.from(Array(maxLength)).map(() => '');
-  }, [categories, hideCategories]);
+  }, [categories, series, hideCategories]);
 
   const options = useMemo(
     () =>
@@ -91,7 +94,7 @@ export default function BarChart({
         isDarkMode ? HIGHCHARTS_THEMES.dark : HIGHCHARTS_THEMES.light
       ),
     [
-      // Shared Properties:
+      animationDuration,
       title,
       titleStyle,
       subtitle,
@@ -110,12 +113,11 @@ export default function BarChart({
       onPointClick,
       captionText,
       isDarkMode,
-      isLoading,
-      // Unique BarChart properties:
       categoriesConverted,
       colorful,
       barLabelPrefix,
       barLabelSuffix,
+      columnWidth,
     ]
   );
 
