@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
 import clsx from 'clsx';
 import { Responsive, WidthProvider } from 'react-grid-layout';
+import React, { useState } from 'react';
 import DashboardWidget from './Widget/DashboardWidget';
 import GridLinesOverlay from './GridLinesOverlay';
 
@@ -19,7 +19,10 @@ export default function Dashboard({ widgetsLayout, className = '' }) {
   const onResizeOrDragStop = () => setIsShowGridLines(false);
 
   return (
-    <div className={clsx('border bg-gray-50 rounded-lg w-full p-2', className)} style={{ direction: 'ltr' }}>
+    <div
+      className={clsx('border bg-gray-50 rounded-lg w-full p-2 dark:bg-slate-900', className)}
+      style={{ direction: 'ltr' }}
+    >
       <div className='relative'>
         {isShowGridLines && <GridLinesOverlay colsNumber={columnsCount} margin={MARGIN} color='#999' />}
         <ResponsiveGridLayout

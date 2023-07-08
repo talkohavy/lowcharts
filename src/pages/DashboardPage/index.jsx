@@ -72,7 +72,7 @@ const widgetsLayout = [
 
 export default function DashboardPage() {
   return (
-    <div className='flex flex-col items-center justify-start gap-4 w-full h-full m-4'>
+    <div className='flex flex-col items-center justify-start gap-4 w-full h-full p-4'>
       <div className='text-4xl font-bold'>Dashboards Page</div>
       <Dashboard widgetsLayout={widgetsLayout} />
     </div>

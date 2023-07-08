@@ -1,6 +1,4 @@
-/* eslint-env node */
-
-export default {
+module.exports = {
   env: {
     browser: true,
     es2021: true,
@@ -52,7 +50,7 @@ export default {
     'react/prop-types': 'off',
     'react/no-unescaped-entities': 'off',
     'react/react-in-jsx-scope': 'off',
-    '@typescript-eslint/no-unused-vars': 'error',
+    '@typescript-eslint/no-unused-vars': ['error', { varsIgnorePattern: 'React' }],
     '@typescript-eslint/no-empty-function': 'off',
     'import/newline-after-import': 2,
     'import/no-duplicates': 'error',

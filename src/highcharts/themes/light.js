@@ -31,7 +31,7 @@ const light = {
     tickColor: '#dddddd',
     title: { style: { color: '#666666' } },
   },
-  plotOptions: { series: { dataLabels: { color: 'black' }, marker: { lineColor: 'white' } } },
+  plotOptions: { series: { dataLabels: { color: 'black' }, marker: { lineColor: 'white', fillColor: 'black' } } },
   legend: {
     backgroundColor: 'transparent',
     itemStyle: { color: 'black' },

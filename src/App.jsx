@@ -8,7 +8,7 @@ function App() {
   const { toggleDarkMode } = useContext(ToggleDarkThemeContext);
 
   return (
-    <div className='dark:bg-[#1d1d1d] dark:text-white'>
+    <div className='h-full dark:bg-[#1d1d1d] dark:text-white'>
       <button
         type='button'
         onClick={toggleDarkMode}

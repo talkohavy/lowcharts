@@ -1,9 +1,8 @@
-import React, { useEffect, useMemo, useRef } from 'react';
 import Highcharts from 'highcharts';
 import HighchartsReact from 'highcharts-react-official';
 import HighchartsExporting from 'highcharts/modules/exporting';
-import { deepMerge } from '../../utils';
-import { wrapInDebounce } from '../../utils/index';
+import React, { useEffect, useMemo, useRef } from 'react';
+import { deepMerge, wrapInDebounce } from '../../utils';
 import { HIGHCHARTS_THEMES } from '../themes';
 import { getOptions } from './getLineChartOptions';
 
@@ -79,7 +78,7 @@ export default function LineChart({
         isDarkMode ? HIGHCHARTS_THEMES.dark : HIGHCHARTS_THEMES.light
       ),
     [
-      // Shared Properties:
+      animationDuration,
       title,
       titleStyle,
       subtitle,
@@ -98,10 +97,9 @@ export default function LineChart({
       onPointClick,
       captionText,
       isDarkMode,
-      isLoading,
-      // Unique BarChart properties:
       addHorizontalLines,
       addVerticalLines,
+      lineWidth,
     ]
   );
 

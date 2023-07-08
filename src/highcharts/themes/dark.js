@@ -42,7 +42,7 @@ const dark = {
     title: { style: { color: '#A0A0A3' } },
   },
   plotOptions: {
-    series: { dataLabels: { color: '#F0F0F3' }, marker: { lineColor: '#333' } },
+    series: { dataLabels: { color: '#F0F0F3' }, marker: { lineColor: '#333', fillColor: 'white' } },
     boxplot: { fillColor: '#505053' },
     candlestick: { lineColor: 'white' },
     errorbar: { color: 'white' },
