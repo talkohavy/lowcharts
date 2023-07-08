@@ -1,25 +1,17 @@
 import 'react-grid-layout/css/styles.css';
-import React, { useState, useCallback } from 'react';
 import { Route, Routes } from 'react-router-dom';
-import BarChart from './highcharts/BarChart';
-import { getIsDarkMode, toggleThemeDarkMode } from './utils/darkMode';
+import { useContext } from 'react';
 import DashboardPage from './pages/DashboardPage';
-import EffectFirst from './EffectFirst';
+import { ToggleDarkThemeContext } from './DarkThemeProvider';
 
 function App() {
-  const [isDarkMode, setIsDarkMode] = useState(false);
-  const changeDarkThemeEffect = useCallback(() => {
-    console.log('shouldBeDark is:', isDarkMode);
-
-    toggleThemeDarkMode({ toDark: isDarkMode });
-  }, [isDarkMode]);
+  const { toggleDarkMode } = useContext(ToggleDarkThemeContext);
 
   return (
     <div className='dark:bg-[#1d1d1d] dark:text-white'>
-      <EffectFirst effect={changeDarkThemeEffect} />
       <button
         type='button'
-        onClick={() => setIsDarkMode(!isDarkMode)}
+        onClick={toggleDarkMode}
         className='flex justify-center items-center border border-black p-2 rounded-lg cursor-pointer bg-red-400 hover:bg-red-500 hover:rounded-xl'
       >
         Switch Theme
