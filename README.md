@@ -10,7 +10,7 @@ To top it off, `lowcharts` uses the library [react-grid-layout](https://github.c
 
 ## 1. Getting Started
 
-## - Using The Components
+### Using The Components
 
 As of now, `lowcharts` has to offer these components:
 - LineChart
@@ -45,7 +45,7 @@ export default function App(){
   )
 } 
 ```
-Graph end result:
+<ins>**Graph's Visual Result**</ins>:\
 <img src="readmeImages/line-chart.jpg" width="640"/>
 
 
@@ -77,14 +77,14 @@ export default function App(){
 } 
 ```
 
-Graph end result:
+<ins>**Graph's Visual Result**</ins>:\
 <img src="readmeImages/bar-chart.jpg" width="640"/>
 
 ## 2. Advanced Options
 TODO: need to add to this part...
 - Talk about the Dark Theme
-- Talk about PlotLines for LineChart
-- Talk about categories for BarChart
+- Talk about `PlotLines` for LineChart
+- Talk about `categories` for BarChart
 
 
 ## 3. Dashboards
@@ -96,11 +96,14 @@ TODO: need to add to this part...
 
 ### `npm run dev`
 
-Runs the demo app in the development mode.\
+Runs the `demo` app in development mode.\
 App is programmed to open a browser automatically on [http://localhost:3000](http://localhost:3000).
-Uses vite's powerful dev-server, with fast HMRs.
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+This demo (currently) contains 3 pages:
+- A BarChart example
+- A LineChart example
+- A Dashboard example
+
+You can play around with the possible options and get a feeling of how fast it is to get familiar with the components' abilities.
 
 ### `npm run build`
 
