@@ -1,8 +1,8 @@
 # LOWCHARTS
 
-`Lowcharts` is a small POC project created by [@Tal Kohavy](https://github.com/talkohavy).
-`Lowcharts` uses [highcharts](https://www.npmjs.com/package/highcharts) and [highcharts-react-official](https://www.npmjs.com/package/highcharts-react-official) under the hood.
-[highcharts](https://www.npmjs.com/package/highcharts) is a JavaScript charting library based on SVG rendering. It has like a MILLION options and features, which is a good thing, but not without its drawbacks. Having so many options & features to offer makes the learning curve very stiff for a developer coming across it for the first time.
+`Lowcharts` is a small POC project created by [@Tal Kohavy](https://github.com/talkohavy).\
+`Lowcharts` uses [highcharts](https://www.npmjs.com/package/highcharts) and [highcharts-react-official](https://www.npmjs.com/package/highcharts-react-official) under the hood.\
+[highcharts](https://www.npmjs.com/package/highcharts) is a JavaScript charting library based on SVG rendering. It has like a MILLION options and features, which is a good thing, but not without its drawbacks. Having so many options & features to offer makes the learning curve very stiff for a developer coming across it for the first time.\
 `Lowcharts` is made to be a performant, developer-friendly tool, with an ***EXTREMELY FAST*** learning curve, all while still maintaining the vast majority of what highcharts has to offer.
 
 To top it off, `lowcharts` uses the library [react-grid-layout](https://github.com/react-grid-layout/react-grid-layout), to help you create beautiful dashboards with widgets containing your custom-made charts!
@@ -51,7 +51,7 @@ export default function App(){
 
 ### Basic BarChart
 
-Creating A LineChart is no different - easy and simple:
+Creating A BarChart is no different - easy and simple:
 
 ```jsx
 import React from 'react'
