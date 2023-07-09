@@ -24,7 +24,6 @@ module.exports = {
   settings: { react: { version: '18.2' } },
   parser: '@typescript-eslint/parser',
   plugins: ['react-refresh', '@typescript-eslint', 'react', 'import', 'sort-exports'],
-  // globals: { process: true },
   rules: {
     // indent: ['error', 2],
     'max-len': [
@@ -69,7 +68,7 @@ module.exports = {
         groups: ['external', 'builtin', 'internal', 'parent', 'sibling', 'index', 'object', 'type'],
       },
     ],
-    // 'import/no-unresolved': [
+    // 'import/no-unresolved': [ // No need for this! Ts has already no-unresolved of its own
     //   'error',
     //   { caseSensitive: true, caseSensitiveStrict: true },
     // ],
