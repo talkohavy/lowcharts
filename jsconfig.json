@@ -16,7 +16,7 @@
     "sourceMap": true,
     "baseUrl": ".",
     "allowSyntheticDefaultImports": true,
-    "paths": { "@src/*": ["apps/frontend/src/*"] }
+    "paths": { "@src/*": ["src/*"] }
   },
   "exclude": [
     "node_modules",

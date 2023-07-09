@@ -6,13 +6,9 @@ module.exports = {
     node: true,
     commonjs: true,
   },
-  overrides: [
-    {
-      env: { node: true },
-      files: ['.eslintrc.{js,cjs}'],
-      parserOptions: { sourceType: 'script' },
-    },
-  ],
+  // overrides: [{ env: { node: true }, files: ['.eslintrc.{js,cjs}'], parserOptions: { sourceType: 'script' } }],
+  root: true,
+  plugins: ['react-refresh', '@typescript-eslint', 'react', 'import', 'sort-exports'],
   extends: [
     'eslint:recommended',
     'plugin:react/recommended',
@@ -23,7 +19,6 @@ module.exports = {
   parserOptions: { ecmaVersion: 'latest', sourceType: 'module' },
   settings: { react: { version: '18.2' } },
   parser: '@typescript-eslint/parser',
-  plugins: ['react-refresh', '@typescript-eslint', 'react', 'import', 'sort-exports'],
   rules: {
     // indent: ['error', 2],
     'max-len': [
