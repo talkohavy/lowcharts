@@ -14,7 +14,7 @@
     "lib": ["ES2022", "DOM"],
     "checkJs": true,
     "sourceMap": true,
-    "baseUrl": ".",
+    "baseUrl": "./",
     "allowSyntheticDefaultImports": true,
     "paths": { "@src/*": ["src/*"] }
   },
