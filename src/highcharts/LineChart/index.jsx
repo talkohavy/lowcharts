@@ -35,6 +35,7 @@ export default function LineChart({
   animationDuration = 1000,
   lineWidth,
   customChartHandleRowRenderer,
+  borderRadius,
 }) {
   // all useRefs:
   const chartRef = useRef(null);
@@ -46,7 +47,7 @@ export default function LineChart({
       observer.observe(chartRef.current.container.current);
       return () => observer.disconnect();
     }
-  }, [chartRef.current]);
+  }, []);
 
   // all useMemos:
   const options = useMemo(
@@ -126,7 +127,7 @@ export default function LineChart({
         allowChartUpdate={true}
         immutable={false}
         ref={chartRef}
-        containerProps={{ style: { width: '100%', height: '100%' } }}
+        containerProps={{ style: { width: '100%', height: '100%', borderRadius } }}
       />
     </>
   );

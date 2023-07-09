@@ -133,6 +133,12 @@ declare interface SharedBarChartLineChartProps {
    * @default undefined
    */
   customChartHandleRowRenderer?: (props: any) => React.JSX;
+  /**
+   * The borderRadius of the chart's container
+   *
+   * @default undefined
+   */
+  borderRadius?: number;
 }
 
 export type { SharedBarChartLineChartProps };

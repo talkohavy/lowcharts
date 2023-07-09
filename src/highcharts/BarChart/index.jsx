@@ -38,6 +38,7 @@ export default function BarChart({
   animationDuration = 1000,
   columnWidth,
   customChartHandleRowRenderer,
+  borderRadius,
 }) {
   // all useRefs:
   const chartRef = useRef(null);
@@ -144,7 +145,7 @@ export default function BarChart({
         allowChartUpdate={true}
         immutable={false}
         ref={chartRef}
-        containerProps={{ style: { width: '100%', height: '100%' } }}
+        containerProps={{ style: { width: '100%', height: '100%', borderRadius } }}
       />
     </>
   );
