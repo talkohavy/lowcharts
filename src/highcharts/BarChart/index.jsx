@@ -1,4 +1,5 @@
 import Highcharts from 'highcharts';
+// @ts-ignore
 import HighchartsReact from 'highcharts-react-official';
 import drilldownModule from 'highcharts/modules/drilldown';
 import React, { useEffect, useMemo, useRef } from 'react';

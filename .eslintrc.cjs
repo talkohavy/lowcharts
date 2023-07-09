@@ -47,6 +47,7 @@ module.exports = {
     '@typescript-eslint/no-unused-vars': ['error', { varsIgnorePattern: 'React' }],
     '@typescript-eslint/no-empty-function': 'off',
     '@typescript-eslint/no-explicit-any': 'off',
+    '@typescript-eslint/ban-ts-comment': 'off',
     'import/newline-after-import': 2,
     'import/no-duplicates': 'error',
     'import/first': 2,

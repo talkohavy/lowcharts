@@ -1,4 +1,5 @@
 import Highcharts from 'highcharts';
+// @ts-ignore
 import HighchartsReact from 'highcharts-react-official';
 import HighchartsExporting from 'highcharts/modules/exporting';
 import React, { useEffect, useMemo, useRef } from 'react';
