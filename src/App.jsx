@@ -2,6 +2,7 @@ import 'react-grid-layout/css/styles.css';
 import { Route, Routes } from 'react-router-dom';
 import DashboardPage from './pages/DashboardPage';
 import Header from './Layout/Header';
+import LineChartExample from './pages/LineChartExample';
 
 function App() {
   return (
@@ -10,7 +11,9 @@ function App() {
 
       <Routes>
         <Route path='index.html' element={<DashboardPage />} />
+        <Route path='/home' element={<DashboardPage />} />
         <Route path='/' element={<DashboardPage />} />
+        <Route path='/line' element={<LineChartExample />} />
 
         <Route path='*' element={<div>Page Not Found</div>} />
       </Routes>
