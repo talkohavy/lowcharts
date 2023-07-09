@@ -57,10 +57,7 @@ export default function BarChart({
   const categoriesConverted = useMemo(() => {
     if (categories && !hideCategories) return categories;
 
-    const maxLength = getArrMaxValue({
-      arr: series,
-      predicate: (item) => item.data.length,
-    });
+    const maxLength = getArrMaxValue({ arr: series, predicate: (item) => item.data.length });
 
     return Array.from(Array(maxLength)).map(() => '');
   }, [categories, series, hideCategories]);

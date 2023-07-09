@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import LineChart from '@src/highcharts/LineChart';
+import BarChart from '@src/highcharts/BarChart';
 import { GetDarkThemeContext } from '../../DarkThemeProvider';
 
 export default function LineChartExample() {
@@ -8,14 +8,15 @@ export default function LineChartExample() {
   return (
     <div className='flex flex-col items-center justify-start p-5'>
       <div className='w-4xl h-2xl rounded-lg'>
-        <LineChart
-          title='Amazing Line Chart'
+        <BarChart
+          title='Amazing Bar Chart'
           subtitle='All the important data you need'
-          xAxisLabel='Amount of Liters [ml]'
-          yAxisLabel='Days count [#]'
-          legendTitleText='The Legend is:'
-          series={[{ data: [1, 3, 2, 7, 4, 5, 9] }]}
-          lineWidth={2}
+          xAxisLabel='States'
+          yAxisLabel='Money Spent [$]'
+          legendTitleText='Legend:'
+          series={[{ data: [10, 3, 2, 7, 4, 5, 9] }]}
+          categories={['New York', 'California', 'Texas', 'Florida', 'Ohio', 'Hawaii', 'Virginia']}
+          colorful={true}
           isDarkMode={isDarkMode}
         />
       </div>

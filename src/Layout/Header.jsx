@@ -16,6 +16,12 @@ const linksRaw = [
     to: '/line',
     text: 'Line Chart',
   },
+  {
+    name: 'BarChartExample',
+    checkIsCurrentPage: ({ pathname }) => /^\/bar/.test(pathname),
+    to: '/bar',
+    text: 'Bar Chart',
+  },
 ];
 
 export default function Header() {
