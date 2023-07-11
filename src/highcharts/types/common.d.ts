@@ -128,12 +128,6 @@ declare interface SharedBarChartLineChartProps {
    */
   animationDuration?: number;
   /**
-   * A top JSX menubar for implementing chart drilling logic.
-   *
-   * @default undefined
-   */
-  customChartHandleRowRenderer?: (props: any) => React.JSX;
-  /**
    * The borderRadius of the chart's container
    *
    * @default undefined

@@ -2,47 +2,57 @@ import Highcharts from 'highcharts';
 // @ts-ignore
 import HighchartsReact from 'highcharts-react-official';
 import drilldownModule from 'highcharts/modules/drilldown';
-import React, { useEffect, useMemo, useRef } from 'react';
+import React, { forwardRef, useEffect, useImperativeHandle, useMemo, useRef } from 'react';
 import { deepMerge, getArrMaxValue, wrapInDebounce } from '../../utils';
 import { HIGHCHARTS_THEMES } from '../themes';
+import { resetZoom, setZoom } from '../functionHelpers';
 import { getOptions } from './getBarChartsOptions';
 
 drilldownModule(Highcharts);
 
 /** @param { import('../types/index').BarChartProps } props  */
-export default function BarChart({
-  title = '',
-  titleStyle,
-  subtitle = '',
-  subtitleStyle,
-  legendTitleText = undefined,
-  xAxisLabel = '',
-  xAxisLabelStyle,
-  xAxisTickStyle,
-  yAxisLabel = '',
-  yAxisLabelStyle,
-  yAxisTickStyle,
-  setMinX = null,
-  setMinY = null,
-  areTicksRotated = false,
-  tooltipValueSuffix = '',
-  onPointClick = () => {},
-  captionText = '',
-  isDarkMode = false,
-  colorful = false,
-  isLoading = false,
-  series = null,
-  categories,
-  hideCategories = false,
-  barLabelPrefix = '',
-  barLabelSuffix = '',
-  animationDuration = 1000,
-  columnWidth,
-  customChartHandleRowRenderer,
-  borderRadius,
-}) {
+function BarChart(
+  {
+    title = '',
+    titleStyle,
+    subtitle = '',
+    subtitleStyle,
+    legendTitleText = undefined,
+    xAxisLabel = '',
+    xAxisLabelStyle,
+    xAxisTickStyle,
+    yAxisLabel = '',
+    yAxisLabelStyle,
+    yAxisTickStyle,
+    setMinX = null,
+    setMinY = null,
+    areTicksRotated = false,
+    tooltipValueSuffix = '',
+    onPointClick = () => {},
+    captionText = '',
+    isDarkMode = false,
+    colorful = false,
+    isLoading = false,
+    series = null,
+    categories,
+    hideCategories = false,
+    barLabelPrefix = '',
+    barLabelSuffix = '',
+    animationDuration = 1000,
+    columnWidth,
+    borderRadius,
+  },
+  ref
+) {
   // all useRefs:
   const chartRef = useRef(null);
+
+  // all useImperativeHandles:
+  useImperativeHandle(ref, () => ({
+    setZoom: ({ xMinValue, xMaxValue }) =>
+      setZoom({ chart: chartRef.current.chart, xMinValue: parseInt(xMinValue), xMaxValue: parseInt(xMaxValue) }),
+    resetZoom: () => resetZoom(chartRef.current.chart),
+  }));
 
   // all useEffects:
   useEffect(() => {
@@ -133,18 +143,18 @@ export default function BarChart({
 
   //------------------- Render GUI ----------------------
   return (
-    <>
-      {customChartHandleRowRenderer?.({ chart: chartRef.current?.chart })}
-
-      <HighchartsReact
-        highcharts={Highcharts}
-        options={optionsWithSeries}
-        constructorType='chart'
-        allowChartUpdate={true}
-        immutable={false}
-        ref={chartRef}
-        containerProps={{ style: { width: '100%', height: '100%', borderRadius } }}
-      />
-    </>
+    <HighchartsReact
+      ref={chartRef}
+      highcharts={Highcharts}
+      options={optionsWithSeries}
+      constructorType='chart'
+      allowChartUpdate={true}
+      immutable={false}
+      containerProps={{ style: { width: '100%', height: '100%', borderRadius } }}
+    />
   );
 }
+
+const ForwardedBarChart = forwardRef(BarChart);
+
+export default ForwardedBarChart;
