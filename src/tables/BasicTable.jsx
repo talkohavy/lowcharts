@@ -99,21 +99,21 @@ function BasicTable(
               {headerGroup.headers.map((header) => (
                 <th key={header.id} colSpan={header.colSpan}>
                   {header.isPlaceholder ? null : (
-                    <div>
+                    <div className='relative'>
                       <div className='relative flex items-center justify-center gap-5 select-none'>
                         <div>{flexRender(header.column.columnDef.header, header.getContext())}</div>
-                        {header.column.getCanSort() && header.column.columnDef.enableSorting ? (
-                          <div
-                            className='absolute top-0 bottom-0 right-0 cursor-pointer'
-                            onClick={(e) => onHeaderClick(e, header)}
-                          >
-                            {SORTING_ICONS[header.column.getIsSorted()] ?? SORTING_ICONS.none}
-                          </div>
-                        ) : null}
                       </div>
                       {header.column.getCanFilter() && header.column.columnDef.enableColumnFilter ? (
                         <div>
                           <DefaultFilter table={tableInstance} column={header.column} />
+                        </div>
+                      ) : null}
+                      {header.column.getCanSort() && header.column.columnDef.enableSorting ? (
+                        <div
+                          className='absolute top-1/2 -translate-y-1/2 right-0 cursor-pointer'
+                          onClick={(e) => onHeaderClick(e, header)}
+                        >
+                          {SORTING_ICONS[header.column.getIsSorted()] ?? SORTING_ICONS.none}
                         </div>
                       ) : null}
                     </div>
