@@ -22,6 +22,12 @@ const linksRaw = [
     to: '/bar',
     text: 'Bar Chart',
   },
+  {
+    name: 'TestPage',
+    checkIsCurrentPage: ({ pathname }) => /^\/tester/.test(pathname),
+    to: '/tester',
+    text: 'Tester',
+  },
 ];
 
 export default function Header() {

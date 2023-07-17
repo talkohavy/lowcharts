@@ -5,9 +5,9 @@ for (let i = 0; i < 20; i++) {
 
 const exampleWidgetsData = {
   barChart: {
+    categories,
     series: [
       {
-        name: 'Population',
         data: [
           { x: 0, y: 37.33, name: 'new name 37' },
           { x: 1, y: 31.18 },
@@ -30,9 +30,9 @@ const exampleWidgetsData = {
           { x: 18, y: 13.79 },
           { x: 19, y: 13.64 },
         ],
+        name: 'Population',
       },
     ],
-    categories,
   },
   lineChart: {
     addHorizontalLines: [
@@ -42,9 +42,7 @@ const exampleWidgetsData = {
     ],
     series: [
       {
-        name: 'Population',
         color: 'lightgray',
-        lineWidth: 0.5,
         data: [
           { x: 0, y: 29.54674846698166 },
           { x: 1, y: 29.669916580331137 },
@@ -198,6 +196,8 @@ const exampleWidgetsData = {
           { x: 149, y: 29.053056747231746 },
           { x: 150, y: 30.482858917598225 },
         ],
+        lineWidth: 0.5,
+        name: 'Population',
       },
     ],
   },
