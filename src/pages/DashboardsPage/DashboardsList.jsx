@@ -1,9 +1,12 @@
+import { useNavigate } from 'react-router-dom';
 import { useMemo, useRef, useState } from 'react';
 import { createColumnHelper } from '@tanstack/react-table';
 import BasicTable from '@src/tables/BasicTable';
 import TableFooter from '../TestPage/TableFooter';
 import DebouncedInput from '../TestPage/DebouncedInput';
 import { mockData } from './mockDB';
+
+const dashboardPagePrefix = '/dashboards/';
 
 /**
  * @type { import('@tanstack/react-table').ColumnHelper<
@@ -35,9 +38,10 @@ export default function DashboardsList() {
   // all useMemos:
   const defaultColumn = useMemo(() => ({ enableSorting: true }), []);
 
-  const onCellClick = (data) => {
-    console.log('data is:', data);
-  };
+  // all package uses:
+  const navigate = useNavigate();
+
+  const onCellClick = ({ row }) => navigate(`${dashboardPagePrefix}${row.original.id}`);
 
   return (
     <>

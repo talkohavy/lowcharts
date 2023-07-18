@@ -5,6 +5,7 @@ import Header from './Layout/Header';
 import LineChartExample from './pages/LineChartExample';
 import BarChartExample from './pages/BarChartExample';
 import TestPage from './pages/TestPage';
+import SingleDashboardPage from './pages/DashboardsPage/SingleDashboardPage';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path='index.html' element={<DashboardsPage />} />
         <Route path='/home' element={<DashboardsPage />} />
         <Route path='/' element={<DashboardsPage />} />
+        <Route path='/dashboards/:id' element={<SingleDashboardPage />} />
         <Route path='/line' element={<LineChartExample />} />
         <Route path='/bar' element={<BarChartExample />} />
         <Route path='/tester' element={<TestPage />} />
