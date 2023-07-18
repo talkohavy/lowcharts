@@ -1,9 +1,11 @@
-import { lazy } from 'react';
+import LineChartWidget from './Line/Renderer';
+import BarChartWidget from './Column/Renderer';
+import TextWidget from './Text/Renderer';
 
 const widgetsMapper = {
-  line: { renderer: lazy(() => import('./Line/Renderer')) },
-  column: { renderer: lazy(() => import('./Column/Renderer')) },
-  text: { renderer: lazy(() => import('./Text/Renderer')) },
+  line: { renderer: LineChartWidget },
+  column: { renderer: BarChartWidget },
+  text: { renderer: TextWidget },
 };
 
 export { widgetsMapper };

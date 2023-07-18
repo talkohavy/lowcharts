@@ -16,8 +16,9 @@ export default function TableFooter({
   nextPage,
 }) {
   return (
-    <div>
+    <div className='flex flex-col gap-y-3'>
       <div>{getRowModel().rows.length} Rows</div>
+
       <div className='flex items-center gap-2'>
         <button className='border rounded p-1' onClick={() => setPageIndex(0)} disabled={!getCanPreviousPage()}>
           {'<<'}
@@ -65,7 +66,8 @@ export default function TableFooter({
           ))}
         </select>
       </div>
-      <div>{getPrePaginationRowModel().rows.length} Rows</div>
+
+      <strong>Total results found: {getPrePaginationRowModel().rows.length}</strong>
     </div>
   );
 }
