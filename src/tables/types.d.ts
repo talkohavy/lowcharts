@@ -4,6 +4,7 @@ type BasicTable = {
   defaultColumn?: any;
   rowSelectionMode?: 'none' | 'single' | 'multi';
   searchText?: string;
+  onCellClick?: (data: any) => void;
   setSearchText?: (value: any) => void;
   renderTableFooter?: (props: TableFooterProps) => JSX;
 };

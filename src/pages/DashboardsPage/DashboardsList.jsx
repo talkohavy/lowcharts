@@ -1,47 +1,28 @@
 import { useMemo, useRef, useState } from 'react';
 import { createColumnHelper } from '@tanstack/react-table';
 import BasicTable from '@src/tables/BasicTable';
-import { mockData } from './MOCK_DATA';
-import TableFooter from './TableFooter';
-import DebouncedInput from './DebouncedInput';
+import TableFooter from '../TestPage/TableFooter';
+import DebouncedInput from '../TestPage/DebouncedInput';
+import { mockData } from './mockDB';
 
 /**
  * @type { import('@tanstack/react-table').ColumnHelper<
  *  {
  *    id: number,
- *    first_name: string,
- *    last_name: string,
- *    date_of_birth: Date,
- *    email: string,
- *    country: string
+ *    name: string,
+ *    createdAt: Date,
  * }> }
  */
 const columnHelper = createColumnHelper();
 
 const COLUMNS = [
-  columnHelper.accessor('id', {
-    header: 'ID',
-    // enableColumnFilter: true,
-    // enableGlobalFilter: true,
-    cell: (cellData) => cellData.getValue(),
-    enableColumnFilter: true,
-  }),
-  {
-    id: 'name',
-    header: 'name',
-    colSpan: 2,
-    columns: [
-      columnHelper.accessor('first_name', { header: 'First Name' }),
-      columnHelper.accessor('last_name', { header: 'Last Name' }),
-    ],
-  },
-  columnHelper.accessor('date_of_birth', {
-    header: 'Date of Birth',
+  columnHelper.accessor('id', { header: 'ID' }),
+  columnHelper.accessor('name', { header: 'Name' }),
+  columnHelper.accessor('createdAt', {
+    header: 'Created At',
     sortDescFirst: true,
     cell: (cellData) => new Date(cellData.getValue()).getFullYear(),
   }),
-  columnHelper.accessor('email', { header: 'Email' }),
-  columnHelper.accessor('country', { header: 'Country' }),
 ];
 
 export default function DashboardsList() {
@@ -53,6 +34,10 @@ export default function DashboardsList() {
 
   // all useMemos:
   const defaultColumn = useMemo(() => ({ enableSorting: true }), []);
+
+  const onCellClick = (data) => {
+    console.log('data is:', data);
+  };
 
   return (
     <>
@@ -72,7 +57,8 @@ export default function DashboardsList() {
         columnDefs={COLUMNS}
         rowData={mockData}
         defaultColumn={defaultColumn}
-        rowSelectionMode='multi'
+        rowSelectionMode='none'
+        onCellClick={onCellClick}
         searchText={searchText}
         setSearchText={setSearchText}
         renderTableFooter={TableFooter}

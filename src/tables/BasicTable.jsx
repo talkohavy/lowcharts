@@ -23,7 +23,16 @@ const ROW_SELECTION_MODES = {
  * @param { any } ref
  *  */
 function BasicTable(
-  { columnDefs, rowData, defaultColumn, rowSelectionMode = 'none', searchText, setSearchText, renderTableFooter },
+  {
+    columnDefs,
+    rowData,
+    defaultColumn,
+    rowSelectionMode = 'none',
+    searchText,
+    setSearchText,
+    renderTableFooter,
+    onCellClick,
+  },
   ref
 ) {
   // all useStates:
@@ -128,10 +137,12 @@ function BasicTable(
             <tr
               key={row.id}
               className={row.getIsSelected() ? '!bg-blue-400 !hover:bg-blue-300' : ''}
-              onClick={row.getToggleSelectedHandler()}
+              onClick={row.getCanSelect() ? row.getToggleSelectedHandler() : undefined}
             >
               {row.getVisibleCells().map((cell) => (
-                <td key={cell.id}>{flexRender(cell.column.columnDef.cell, cell.getContext())}</td>
+                <td key={cell.id} onClick={() => onCellClick?.({ cell, row })}>
+                  {flexRender(cell.column.columnDef.cell, cell.getContext())}
+                </td>
               ))}
             </tr>
           ))}
