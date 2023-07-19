@@ -2,7 +2,7 @@ import React from 'react';
 
 const RESULTS_COUNT = [10, 20, 30, 40, 50];
 
-/** @param {Partial<import('@tanstack/react-table').Table>} props */
+/** @param { Partial<import('@tanstack/react-table').Table> } props */
 export default function TableFooter({
   getState,
   getRowModel,

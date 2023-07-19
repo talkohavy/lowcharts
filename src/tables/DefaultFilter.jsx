@@ -4,7 +4,7 @@ export default function DefaultFilter({ table, column }) {
   const columnFilterValue = column.getFilterValue();
 
   return typeof firstValue === 'number' ? (
-    <div className='flex space-x-2'>
+    <div className='flex gap-x-2'>
       <input
         type='number'
         value={columnFilterValue?.[0] ?? ''}
