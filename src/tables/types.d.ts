@@ -1,3 +1,5 @@
+import type { ReactNode } from 'react';
+
 type BasicTable = {
   columnDefs: any;
   rowData: Array;
@@ -6,7 +8,7 @@ type BasicTable = {
   searchText?: string;
   onCellClick?: (data: any) => void;
   setSearchText?: (value: any) => void;
-  renderTableFooter?: (props: TableFooterProps) => JSX;
+  renderTableFooter?: (props: any) => ReactNode;
 };
 
 export { BasicTable };
