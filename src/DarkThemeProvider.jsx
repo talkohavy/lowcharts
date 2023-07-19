@@ -2,7 +2,7 @@ import React, { createContext, useState } from 'react';
 
 const THEME_OPTIONS = { dark: 'dark', light: 'light' };
 
-export const GetDarkThemeContext = createContext(null);
+export const GetDarkThemeContext = createContext({});
 export const ToggleDarkThemeContext = createContext(null);
 
 export default function DarkThemeProvider({ children }) {
